@@ -1,0 +1,53 @@
+#zad1
+def zad1(imie, nazwisko):
+    return imie[0]+"."+nazwisko
+print(zad1("Juras","Bodys"))
+#zad2
+def zad2(imie, nazwisko):
+
+    return imie[0].upper()+"."+nazwisko[0].upper()+nazwisko[1:]
+print(zad2("karool","patus"))
+#zad3
+def zad3(pier,ost,wiek):
+    return pier*100+ost-wiek
+print(zad3(20,22,21))
+#zad4
+def zad4(imie,nazwisko,zad2):
+    return zad2(imie,nazwisko)
+print(zad4("kszatan","kosicki",zad2))
+#zad5
+def zad5(a,b):
+    if a<0 and b<0:
+        return "nie są dodatnie"
+    if b==0:
+        return "b to 0"
+    return a/b
+
+print(zad5(4,-10))
+
+#zad6
+#i=0
+#while i<100:
+#    print("podaj liczbe")
+#    i+=int(input())
+#print(i)
+#zad7
+def zad7(lista):
+    return tuple(lista)
+lista = [1,2,3,"abc",32,1]
+print(zad7(lista))
+#zad8
+#krotka = []
+#a = int(input("podaj ile chcesz wpisac liczb do krotki"))
+#for i in range(0,a):
+#    war = int(input("podaj liczbe"))
+#    krotka.append(war)
+#b=tuple(krotka)
+#print(b)
+#zad9
+def zad9(a):
+    tup = ("poniedziałek", "wtorek", "środa", "czwartek", "piątek", "sobota", "niedziela")
+    return tup[a - 1]
+
+
+print(zad9(3))
