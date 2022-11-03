@@ -1,0 +1,38 @@
+from typing import Any, List, Callable, Union
+class TreeNode:
+    value: Any
+    kids = List['TreeNode']
+
+    def __init__(self, value):
+        self.value = value
+        self.kids = []
+    def __str__(self):
+        wys = ""
+        for i in self.kids:
+            wys = f"{wys}->{str(i)}"
+
+        return wys
+
+    def add(self,child) -> None:
+        self.kids.append(child)
+    def is_leaf(self):
+        if self.kids != []:
+            return True
+        return False
+
+    def forEachDeepFirst(self, visit: Callable[['TreeNode'], None]) -> None:
+        visit(self)
+        for k in self.kids:
+            visit(k)
+class Tree:
+    root: TreeNode
+    
+drzewo = TreeNode(11)
+
+drzewo.add(34)
+drzewo.add(5)
+drzewo.add(10)
+drzewo.add(2)
+drzewo.add(14)
+drzewo.add(3)
+print(drzewo)
