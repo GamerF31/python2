@@ -1,6 +1,7 @@
 class tab_ros_g:
     pojemnosc: int
     zajetosc: int
+    
     dane: list[str]
 
     def __init__(self,dane=[None,None]):
@@ -35,7 +36,7 @@ class tab_ros_g:
             self.dane.pop(-1)
             self.zajetosc+=1
         elif self.zajetosc==self.pojemnosc:
-            self.pojemnosc=2
+            self.pojemnosc*=2
             for i in range(self.pojemnosc - len(self.dane)-1):
                 self.dane.append(None)
             self.dane.insert(self.zajetosc, wartosc)
@@ -103,11 +104,13 @@ class tab_ros_g:
 tab = tab_ros_g()
 tab.ustal(2, 3)
 tab.ustal(5, 1)
+tab.pobierz(3)
+tab.dodaj_za_koniec(6)
 tab.ustal(18, 20)
 tab.wstaw_przed(7, 2)
+tab.wstaw_przed(12, -10)
 print(tab.pojemnosc)
 print(tab.zajetosc)
-tab.wstaw_przed(12, -10)
 
 print("---------------")
 
